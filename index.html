@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+	<html lang="en"></html>
+<head>
+	<title>Flip Book </title>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="book.css">
+	<script src="./pin.js" defer></script>
+	<script src="./load.js" defer></script>
+	<script src="./note.js" defer></script>
+	<script src="./clean.js" defer></script>
+	<script src="./lightup.js" defer></script>
+
+</head>
+<body id="body">
+	<div id="pre"><img src="./img/preloader.gif" ></div>
+	<a style="display:none" id="aud"></a><a id="det" style="display:none">1</a>
+	<!--!> widget lists <-->
+
+<div class="leath" id="leath">
+<div id="album" class="album">
+	<div style="background: url('./PAGE/P1.png'); background-size: 100% 100%;"></div>
+	<div style="background: url('./PAGE/P2.png'); background-size: 100% 100%;">
+		<a id="music1btn"><svg onclick="loadmusic1()" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:15px"><path d="M256 32C112.9 32 4.563 151.1 0 288v104C0 405.3 10.75 416 23.1 416S48 405.3 48 392V288c0-114.7 93.34-207.8 208-207.8C370.7 80.2 464 173.3 464 288v104C464 405.3 474.7 416 488 416S512 405.3 512 392V287.1C507.4 151.1 399.1 32 256 32zM160 288L144 288c-35.34 0-64 28.7-64 64.13v63.75C80 451.3 108.7 480 144 480L160 480c17.66 0 32-14.34 32-32.05v-127.9C192 302.3 177.7 288 160 288zM368 288L352 288c-17.66 0-32 14.32-32 32.04v127.9c0 17.7 14.34 32.05 32 32.05L368 480c35.34 0 64-28.7 64-64.13v-63.75C432 316.7 403.3 288 368 288z"/></svg></a><a id="music1"></a>
+		<a id="vde1"><svg onclick="loadvid1()" id="vd2"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:15px"><path d="M326.1 160l127.4-127.4C451.7 32.39 449.9 32 448 32h-86.06l-128 128H326.1zM166.1 160l128-128H201.9l-128 128H166.1zM497.7 56.19L393.9 160H512V96C512 80.87 506.5 67.15 497.7 56.19zM134.1 32H64C28.65 32 0 60.65 0 96v64h6.062L134.1 32zM0 416c0 35.35 28.65 64 64 64h384c35.35 0 64-28.65 64-64V192H0V416z"/></svg></a>
+	</div>
+	
+	<div style="background: url('./PAGE/P3.png'); background-size: 100% 100%;">
+	</div>
+	<div id="pg2"><img src="./PAGE/P2.png" style="height: 100%;width: 100%;" alt=""><img src="./src/sound.png" id='pg2r' onclick='playvideo()' alt="aloud"><img src="./img/pause.png" onclick="pausevideo()" alt="" id="pg2p"><img src="./img/exam.png" onclick="interactive()" alt="ok" id="pgee"><video disablePictureInPicture controlsList="nodownload" style="width:100%;height:100%" src="./src/My Video4.mp4" id="pg2v"></video></div>
+	<div style="background: url('./PAGE/P4.png'); background-size: 100% 100%;">
+	</div>
+	
+	
+</div>
+</div>
+<img id="Logo" src="BITBLITS LOGO.png" alt="BITBLITS Logo">
+<span id="selText" style="display: none;">1</span><span id="pgval" style="display: none;">1</span><span id="pgvalmb" style="display: none;">1</span><br></br>
+<span id="left"><img style="width: 7vw;" src="./img/left-arrow.png" alt=""></span>
+	<span id="right"><img style="width: 7vw;" src="./img/right-arrow.png" alt=""></span>
+	<span id="pbinsp"  class="pmbinsp"><input value="0" type="range" name="Range" min="0" max="100"></span>
+<div id="btn">
+	<span id="bck">
+		<p style="margin: 10px 0px;font-size: 13px;">PREVIOUS</p>
+		<span style="height: 18px;">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 15px;"><path fill="#cfcfcf" d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM310.6 345.4c12.5 12.5 12.5 32.75 0 45.25s-32.75 12.5-45.25 0l-112-112C147.1 272.4 144 264.2 144 256s3.125-16.38 9.375-22.62l112-112c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L221.3 256L310.6 345.4z"/></svg>
+		</span>
+	</span>
+	<span id="nxt">
+		<p style="margin: 10px 0px;font-size:13px">NEXT</p>
+		<span style="height: 18px;">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 15px;"><path fill="#cfcfcf"d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM358.6 278.6l-112 112c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25L290.8 256L201.4 166.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l112 112C364.9 239.6 368 247.8 368 256S364.9 272.4 358.6 278.6z"/></svg>
+		</span>
+	</span>
+	<span id="controls">
+		<label for="page-number" style='font-size: 14px;'>PAGE -</label> <input type="text" size="2" id="page-number"> of <span id="number-pages"></span>
+	</span>
+	<span style="display:flex">
+		<span id="zoom">
+		<span id="zm"  style="height: 18px;"><svg xmlns="http://www.w3.org/2000/svg" style="width: 18px;" viewBox="0 0 512 512"><path fill="#cfcfcf" d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7c-12.23-91.55-87.28-166-178.9-177.6c-136.2-17.24-250.7 97.28-233.4 233.4c11.6 91.64 86.07 166.7 177.6 178.9c53.81 7.191 104.3-6.235 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 .0003C515.9 484.7 515.9 459.3 500.3 443.7zM288 232H231.1V288c0 13.26-10.74 24-23.1 24C194.7 312 184 301.3 184 288V232H127.1C114.7 232 104 221.3 104 208s10.74-24 23.1-24H184V128c0-13.26 10.74-24 23.1-24S231.1 114.7 231.1 128v56h56C301.3 184 312 194.7 312 208S301.3 232 288 232z"/></svg></span>
+	</span>
+	<span  id="zoom1" style="margin-left:10px;" >
+		<span  style="height: 18px;">T</span>
+	</span>
+	<span  id="zoom2" style="margin-left:10px;" >
+		<span  style="height: 18px;"><svg xmlns="http://www.w3.org/2000/svg" style="width: 18px;"viewBox="0 0 512 512"><path fill="#cfcfcf" d="M503.691 189.836L327.687 37.851C312.281 24.546 288 35.347 288 56.015v80.053C127.371 137.907 0 170.1 0 322.326c0 61.441 39.581 122.309 83.333 154.132 13.653 9.931 33.111-2.533 28.077-18.631C66.066 312.814 132.917 274.316 288 272.085V360c0 20.7 24.3 31.453 39.687 18.164l176.004-152c11.071-9.562 11.086-26.753 0-36.328z"/></svg></span>
+	</span>
+	<span id="Notebtn"> 
+    <img src="./img/writing.png" style="    filter: invert(1);
+    opacity: 0.9;" width="25px">
+	</span>
+    </span>
+	<span id="pin">
+	<span><img src="./img/office-push-pin.png" alt="pin" id="pinImage" ></span>
+    <span id="pen"><span><img src="./img/pen.png" alt="pen" id="penImage" ></span></span>
+	<span id="erase" ><span><img src="./img/eraser.png" alt="eraser" id="eraseImage" ></span></span>
+	<span id="clean" class="clean" ><span><img src="./img/clean.png" alt="clean" id="cleanImage" ></span></span>
+    </span>
+	<span id="pin1"><span><img src="./img/spotlight.png" alt="Spot Light" id='SpotLight'></span></span>
+</div>
+
+
+
+
+<div id="mbbtn">
+	<span id="mbinsp"><input type="range" name="Range" min="0" max="100"></span>
+	<br>
+	<span id="bck1">
+		<span style="height: 18px;">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 18px;"><path fill="#234b55" d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM310.6 345.4c12.5 12.5 12.5 32.75 0 45.25s-32.75 12.5-45.25 0l-112-112C147.1 272.4 144 264.2 144 256s3.125-16.38 9.375-22.62l112-112c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L221.3 256L310.6 345.4z"/></svg>
+		</span>
+	</span>
+	<span id="nxt1">
+		<span style="height: 18px;">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 18px;"><path fill="#234b55"d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM358.6 278.6l-112 112c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25L290.8 256L201.4 166.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l112 112C364.9 239.6 368 247.8 368 256S364.9 272.4 358.6 278.6z"/></svg>
+		</span>
+	</span>
+	<span  id="selmb" style="margin-left:10px;" >
+		<span>T</span>
+	</span><br>
+	<span id="controls">
+		<label for="page-number" >PAGE -</label> <input type="text" size="2" id="page-numbermb"> of <span id="number-pages">5</span><svg  id="mbpage" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width: 21px;"><path fill="#e4ffff"d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM358.6 278.6l-112 112c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25L290.8 256L201.4 166.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l112 112C364.9 239.6 368 247.8 368 256S364.9 272.4 358.6 278.6z"/></svg>
+	</span>
+		<span id="copymb" style="height:40px;margin-left:10px;"><svg xmlns="http://www.w3.org/2000/svg" style="width: 18px;"viewBox="0 0 512 512"><path fill="#234b55" d="M503.691 189.836L327.687 37.851C312.281 24.546 288 35.347 288 56.015v80.053C127.371 137.907 0 170.1 0 322.326c0 61.441 39.581 122.309 83.333 154.132 13.653 9.931 33.111-2.533 28.077-18.631C66.066 312.814 132.917 274.316 288 272.085V360c0 20.7 24.3 31.453 39.687 18.164l176.004-152c11.071-9.562 11.086-26.753 0-36.328z"/></svg>
+	</span>
+</div>
+
+  <!---------------------------->
+<button id="home"></button>
+<note><img src="./img/up-arrow.png"><img src="./img/delete.png"><textarea rows="5" cols="50"></textarea></note>
+<!--
+
+// magnify
+position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin-left: 27vw;
+    margin-top: 32vw;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
+    flex-wrap: wrap;
+    transform: scale(3);
+
+-->
+<span id="allpinthumb">
+	<span><img src="./img/delete.png"><img src="./img/thumb-book-pin.png" alt="" srcset=""><text>1</text></span>
+</span>
+<div class="confirm" id="confirm">
+	<h1>Confirm</h1>
+	<p>Want to visit <strong>really</strong> page ?</p>
+	<button id="cancel">Cancel</button>
+	<button autofocus id="visit">Confirm</button>
+</div>
+<img src="./img/thumb-book.png" alt="Thumb Book" id='thumb-book' srcset="">
+<text id="l">0</text>
+<text id="r">1</text>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script>	
+    var vidplay = 0;
+	var musicplay = 0;
+	var script = document.createElement('script');
+script.type='text/javascript';
+
+document.getElementsByTagName('head')[0].appendChild(script);
+function loadvid1() {
+	if(vidplay == 1){
+		var a = document.getElementById('vde1').innerHTML;
+		document.getElementById('vde1').innerHTML = '<svg onclick="loadvid1()" id="vd2"xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="width:15px"><path d="M326.1 160l127.4-127.4C451.7 32.39 449.9 32 448 32h-86.06l-128 128H326.1zM166.1 160l128-128H201.9l-128 128H166.1zM497.7 56.19L393.9 160H512V96C512 80.87 506.5 67.15 497.7 56.19zM134.1 32H64C28.65 32 0 60.65 0 96v64h6.062L134.1 32zM0 416c0 35.35 28.65 64 64 64h384c35.35 0 64-28.65 64-64V192H0V416z"/></svg>';
+		vidplay--;
+	}
+	else if(vidplay == 0){
+		vidplay++;
+		var a = document.getElementById('vde1').innerHTML;
+		document.getElementById('vde1').innerHTML = a + `<video style="position: absolute;"src="./src/demo 21-22_2.mp4" controls></video>`;
+	}
+};
+function loadmusic1(){
+    if(musicplay == 1){
+		document.getElementById('music1').innerHTML = '';
+		musicplay--;
+	}
+	else if(musicplay == 0){
+		musicplay++;
+		var a = document.getElementById('music1').innerHTML;
+		document.getElementById('music1').innerHTML = a + `<audio id="vda"controls src="./PAGE/profile.mp3"></audio><p class="cls1" onclick="music1cls()">x</p>`;
+	}
+}
+if(window.matchMedia("(max-width:600px)").matches) {
+  script.src = 'flip.js'; 
+  if(screen.width<500){
+	document.getElementById('leath').style.background ='none'
+  }     
+}else{
+  script.src = 'pc.js';      
+}
+</script>
+</body>
+</html>
+
+
+
